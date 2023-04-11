@@ -1,0 +1,17 @@
+use("platzi_store")
+
+// un solo elemento
+/* db.products.updateMany({}, {
+  $pull: {
+    tags: "book"
+  }
+}) */
+
+// varios elementos
+db.products.updateMany({}, {
+  $pull: {
+    tags: {
+      $in : ["appliance", "school"]
+    }
+  }
+})

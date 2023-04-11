@@ -1,0 +1,15 @@
+use("platzi_store")
+
+db.products.updateOne(
+  // query
+  {_id: 4},
+
+  // operator inc, toma el valor base + valor designado
+  {
+    $inc: {
+      price: 150,
+    }
+  },
+)
+
+db.products.find()
