@@ -1,0 +1,16 @@
+use("platzi_store")
+
+/* Contain word sensitive case */
+db.inventory.find({"item.description": { $regex: /line/ }})
+
+/* Contain word no sensitive case */
+db.inventory.find({"item.description": { $regex: /LINE/i }})
+
+/* End word */
+db.inventory.find({"item.description": { $regex: /line$/i }})
+
+/* Start word */
+db.inventory.find({"item.description": { $regex: /^single/i }})
+
+/* Find one letter with multiline */
+db.inventory.find({"item.description": { $regex: /^s/im }})
