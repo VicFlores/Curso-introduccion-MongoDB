@@ -1,0 +1,8 @@
+use("sample_training")
+
+// 1 = menor a mayor
+// -1 mayor a menor
+db.zips
+    .find({pop: {$gte: 100}})
+    .sort({ pop: 1})
+    .limit(2)
